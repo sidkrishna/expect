@@ -1,0 +1,35 @@
+---
+name: sidd-test 
+description: Add a bgp neighbor
+runner_type: expect
+enabled: true
+parameters:
+  cmds:
+    description: Array of commands.
+    immutable: true
+    type: array
+    default:
+#      - ['export PS1=''\u@\h: ''','vslxhost:']
+      - ['vsh connect test1']
+      - ['admin','Password:']
+      - ['password','SLX#']
+      - ['conf','SLX(config)#']
+#      - ['int Management 1','(config-Management-1)#']
+#      - ['ip address 10.254.3.37/20','(config-Management-1)#']
+#      - ['vrf mgmt-vrf','(config-vrf-mgmt-vrf)#']
+#      - ['address-family ipv4 unicast','(vrf-mgmt-vrf-ipv4-unicast)#']
+#      - ['ip route 0.0.0.0/0 10.254.0.1','(vrf-mgmt-vrf-ipv4-unicast)#']
+      - ['end','SLX#']
+#      - ['copy running-config startup-config','[y/n]:']
+#      - ['y','SLX#']
+      - ['exit']
+  entry:
+    description: Entry point for grammar.
+    immutable: true
+    type: string
+    default: ''
+  grammar:
+    description: Grako EBNF grammar for parsing.
+    immutable: true
+    type: string
+    default: ''
